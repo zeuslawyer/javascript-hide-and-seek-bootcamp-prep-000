@@ -26,17 +26,27 @@ function hasNoMoreChildren(obj) {
   }
 }
 
+function getChild(node) {
+  if (node.children.length === 0) {
+    return node;
+  } else {
+    getChild(node[0]);
+  }
+}
+
 function deepestChild(){
-  console.log('HERE IT IS!!!   ' + document.getElementById('grand-node').children);
   
   let current = document.getElementById('grand-node');
   
-  while (current) {
-    if (hasNoMoreChildren(current)) {
-      return current;
-    }
-    current = current.children[0];
+  getChild(current);
+  
+  // while (current) {
+  //   if (hasNoMoreChildren(current)) {
+  //     return current;
+  //   }
+  //   //else
+  //   current = current.children[0];
     
-  }
-  return null;
+  // }
+  // return null;
 }
