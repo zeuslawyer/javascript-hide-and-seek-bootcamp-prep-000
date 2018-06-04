@@ -20,6 +20,7 @@ function increaseRankBy(n) {
 
 // test function for use within deepestChild()
 function testCriteria(obj) {
+  //check if the passed in val has chilren - if not, then it's the deepest child
   if (obj.children.length === 0) {
     return true;
   }
@@ -29,7 +30,6 @@ function deepestChild(){
   console.log('HERE IT IS!!!   ' + document.getElementById('grand-node').children);
   
   let current = document.getElementById('grand-node');
-  let holder = [];
   
   while (current) {
     if (testCriteria(current)) {
