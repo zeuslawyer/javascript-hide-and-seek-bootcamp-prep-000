@@ -29,9 +29,9 @@ function hasNoMoreChildren(obj) {
 function getChild(obj) {
   if (obj.children.length === 0) {
     return obj;
-  } else {
-    getChild(obj[0]);
-  }
+  } 
+  getChild(obj[0]);
+  
 }
 
 function deepestChild(){
