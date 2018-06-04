@@ -17,7 +17,31 @@ function increaseRankBy(n) {
   }
 }
 
+
+function testCriteria(obj) {
+  if (obj.children === null) {
+    return true;
+  }
+}
+
+
 function deepestChild(){
-  let len = document.getElementById('#grand-node').childNodes.length;
-  return document.getElementById('#grand-node').childNodes[len-1];
+  console.log('HERE IT IS!!!   ' + document.getElementById('grand-node').children);
+  
+  let current = document.getElementById('grand-node').children;
+  let holder = [];
+  
+  while (current) {
+    if (testCriteria(current)) {
+      return current;
+    }
+    
+    if (Array.isArray(current)) {
+      for (i=0; i < current.length; i++) {
+        holder.push(current[i]);
+      }
+    }
+    current = holder.shift()
+  }
+  return null;
 }
