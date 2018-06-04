@@ -26,11 +26,11 @@ function hasNoMoreChildren(obj) {
   }
 }
 
-function getChild(node) {
-  if (node.children.length === 0) {
-    return node;
+function getChild(obj) {
+  if (obj.children.length === 0) {
+    return obj;
   } else {
-    getChild(node[0]);
+    getChild(obj[0]);
   }
 }
 
