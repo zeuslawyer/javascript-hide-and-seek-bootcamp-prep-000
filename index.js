@@ -26,8 +26,8 @@ function hasNoMoreChildren(obj) {
   }
 }
 
+f
 function deepestChild(){
-  console.log('HERE IT IS!!!   ' + document.getElementById('grand-node').children);
   
   let current = document.getElementById('grand-node');
   
@@ -35,6 +35,7 @@ function deepestChild(){
     if (hasNoMoreChildren(current)) {
       return current;
     }
+    //else
     current = current.children[0];
     
   }
