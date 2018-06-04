@@ -18,30 +18,25 @@ function increaseRankBy(n) {
 }
 
 
+// test function for use within deepestChild()
 function testCriteria(obj) {
-  if (obj.children === null) {
+  if (obj.children.length === 0) {
     return true;
   }
 }
 
-
 function deepestChild(){
   console.log('HERE IT IS!!!   ' + document.getElementById('grand-node').children);
   
-  let current = document.getElementById('grand-node').children;
+  let current = document.getElementById('grand-node');
   let holder = [];
   
   while (current) {
     if (testCriteria(current)) {
       return current;
     }
+    current = current.children[0];
     
-    if (Array.isArray(current)) {
-      for (i=0; i < current.length; i++) {
-        holder.push(current[i]);
-      }
-    }
-    current = holder.shift()
   }
   return null;
 }
