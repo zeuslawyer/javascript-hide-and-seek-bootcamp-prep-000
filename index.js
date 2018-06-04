@@ -19,7 +19,7 @@ function increaseRankBy(n) {
 
 
 // test function for use within deepestChild()
-function testCriteria(obj) {
+function hasNoMoreChildren(obj) {
   //check if the passed in val has chilren - if not, then it's the deepest child
   if (obj.children.length === 0) {
     return true;
@@ -32,7 +32,7 @@ function deepestChild(){
   let current = document.getElementById('grand-node');
   
   while (current) {
-    if (testCriteria(current)) {
+    if (hasNoMoreChildren(current)) {
       return current;
     }
     current = current.children[0];
